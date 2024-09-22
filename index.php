@@ -18,11 +18,12 @@ require_once "controllers/core/Response.php";
 
 
 /***--- Agregar todos los modelos*/
-
+require_once "models/ProductoModel.php";
 
 
 /***--- Agregar todos los controladores*/
 require_once "controllers/PruebaController.php";
+require_once "controllers/ProductoController.php";
 
 
 //Enrutador
