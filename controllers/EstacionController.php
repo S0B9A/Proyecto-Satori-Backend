@@ -1,8 +1,8 @@
 <?php
 
-//http://localhost:81/SatoriAsianCuisine/producto
+//http://localhost:81/SatoriAsianCuisine/estacion
 
-class producto
+class estacion
 {
     //GET listar
     public function index()
@@ -11,10 +11,10 @@ class producto
             $response = new Response();
 
             //Instancia modelo
-            $productoModel = new ProductoModel;
+            $estacionModel = new EstacionModel;
 
             //Método del modelo
-            $result = $productoModel->all();
+            $result = $estacionModel->all();
 
             //Dar respuesta
             $response->toJSON($result);
@@ -27,8 +27,8 @@ class producto
     {
         try {
             $response = new Response();
-            $producto = new ProductoModel;
-            $result = $producto->get($param);
+            $estacion = new EstacionModel;
+            $result = $estacion->get($param);
 
             //Dar respuesta
             $response->toJSON($result);
