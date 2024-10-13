@@ -42,7 +42,7 @@ class ProductoModel
 
             //Ejecutar la consulta
             $vResultado = $this->enlace->ExecuteSQL($vSql);
-            
+
             if (!empty($vResultado)) {
 
                 $vResultado = $vResultado[0];
@@ -53,10 +53,41 @@ class ProductoModel
                 $vResultado->estaciones = $estaciones;
             }
 
-             //Retornar la respuesta
-             return $vResultado;
+            //Retornar la respuesta
+            return $vResultado;
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
 
+    /*Obtener Producto por id */
+    public function getProductoDetalleProceso($id)
+    {
+        try {
 
+            $estacionModel = new EstacionModel();
+
+            //Consulta sql
+            $vSql = "SELECT * fROM producto where id=$id";
+
+            //Ejecutar la consulta
+            $vResultado = $this->enlace->ExecuteSQL($vSql);
+
+            if (!empty($vResultado)) {
+
+                $vResultado = $vResultado[0];
+
+                //Producto
+                $productoID =  $vResultado->id;
+                $estaciones = $estacionModel->getEstacionesPorProductoID($productoID);
+                $vResultado->estaciones = $estaciones;
+
+                //Ordenes
+                
+            }
+
+            //Retornar la respuesta
+            return $vResultado;
         } catch (Exception $e) {
             handleException($e);
         }
@@ -94,19 +125,35 @@ class ProductoModel
         }
     }
 
-     /*Obtener Todos los Producto que forman parte del estacionProducto por su id */
-     public function getProductosPorEstacionID($id)
-     {
-         try {
-             //Consulta sql
-             $vSql = "SELECT * FROM producto WHERE id IN (SELECT id_producto FROM estaciones_productos WHERE id_estacion = $id);";
- 
-             //Ejecutar la consulta
-             $vResultado = $this->enlace->ExecuteSQL($vSql);
-             // Retornar la lista
-             return $vResultado;
-         } catch (Exception $e) {
-             handleException($e);
-         }
-     }
+    /*Obtener Todos los Producto que forman parte del estacionProducto por su id */
+    public function getProductosPorEstacionID($id)
+    {
+        try {
+            $estacionModel = new EstacionModel();
+
+            //Consulta sql
+            $vSql = "SELECT * FROM producto WHERE id IN (SELECT id_producto FROM estaciones_productos WHERE id_estacion = $id);";
+
+            //Ejecutar la consulta
+            $vResultado = $this->enlace->ExecuteSQL($vSql);
+
+
+            if (!empty($vResultado)) {
+
+                foreach ($vResultado as $producto) {
+                    // Obtener el ID de la estación
+                    $productoID = $producto->id;
+                    // Obtener los productos asociados a esa estación
+                    $cantidadEstaciones = $estacionModel->getCantidadEstacionesPorProductoID($productoID);
+                    // Asignar los productos a la estación actual
+                    $producto->cantidadEstaciones = $cantidadEstaciones;
+                }
+            }
+
+            // Retornar la lista
+            return $vResultado;
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
 }

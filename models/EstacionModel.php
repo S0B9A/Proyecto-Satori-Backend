@@ -18,12 +18,29 @@ class EstacionModel
     public function all()
     {
         try {
-            //Consulta SQL
-            $vSQL = "SELECT * FROM estacion ORDER BY nombre DESC;";
-            //Ejecutar la consulta
-            $vResultado = $this->enlace->ExecuteSQL($vSQL);
-            //Retornar la respuesta
+            $productoModel = new ProductoModel();
 
+            // Consulta SQL
+            $vSQL = "SELECT * FROM estacion;";
+
+            // Ejecutar la consulta
+            $vResultado = $this->enlace->ExecuteSQL($vSQL);
+
+            // Si hay resultados
+            if (!empty($vResultado)) {
+                // Recorrer cada estación
+                foreach ($vResultado as $estacion) {
+                    // Obtener el ID de la estación
+                    $estacionID = $estacion->id;
+                    // Obtener los productos asociados a esa estación
+                    $productos = $productoModel->getProductosPorEstacionID($estacionID);
+                    // Asignar los productos a la estación actual
+                    $estacion->productos = $productos;
+                }
+                
+            }
+
+            // Retornar la lista de estaciones con sus productos
             return $vResultado;
         } catch (Exception $e) {
             handleException($e);
@@ -49,7 +66,6 @@ class EstacionModel
                 $estacionID =  $vResultado->id;
                 $productos = $productoModel->getProductosPorEstacionID($estacionID);
                 $vResultado->productos = $productos;
-
             }
 
             //Retornar la respuesta
@@ -64,12 +80,27 @@ class EstacionModel
     {
         try {
             //Consulta sql
-            $vSql = "SELECT * FROM estacion WHERE id IN (SELECT id_estacion FROM estaciones_productos WHERE id_producto = $id);";
+            $vSql = "SELECT * FROM estacion WHERE id IN ( SELECT id_estacion FROM estaciones_productos  WHERE id_producto = $id)
+             ORDER BY (SELECT orden FROM estaciones_productos WHERE id_estacion = estacion.id AND id_producto = $id);";
 
             //Ejecutar la consulta
             $vResultado = $this->enlace->ExecuteSQL($vSql);
             // Retornar la lista
             return $vResultado;
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
+
+    public function getCantidadEstacionesPorProductoID($id)
+    {
+        try {
+            //Consulta sql
+            $vSql = "SELECT COUNT(id_estacion) AS total_estaciones FROM estaciones_productos  WHERE id_producto = $id;";
+            //Ejecutar la consulta
+            $vResultado = $this->enlace->ExecuteSQL($vSql);
+            // Retornar la lista
+            return $vResultado[0];
         } catch (Exception $e) {
             handleException($e);
         }

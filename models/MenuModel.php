@@ -65,4 +65,40 @@ class MenuModel
             handleException($e);
         }
     }
+
+    public function getMenuActual()
+    {
+        try {
+
+            $productoModel = new ProductoModel();
+            $comboModel = new ComboModel();
+
+
+            $vSql = "SELECT * FROM menu WHERE CURDATE() BETWEEN fecha_inicio AND fecha_fin ORDER BY fecha_inicio DESC LIMIT 1;";
+
+            //Ejecutar la consulta sql
+            $vResultado = $this->enlace->executeSQL($vSql);
+
+            if (!empty($vResultado)) {
+
+                $vResultado = $vResultado[0];
+
+                //Producto
+                $menuID =  $vResultado->id;
+                $productos = $productoModel->getProductosPorMenuID($menuID);
+                $vResultado->productos = $productos;
+
+                //Combos 
+                $menuID =  $vResultado->id;
+                $combos = $comboModel->getCombosPorMenuID($menuID);
+                $vResultado->combos = $combos;
+
+            }
+
+            //Retornar la respuesta
+            return $vResultado;
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
 }

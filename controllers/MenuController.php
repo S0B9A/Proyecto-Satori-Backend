@@ -36,4 +36,25 @@ class menu
             handleException($e);
         }
     }
+
+       //GET listar
+       public function getMenuActual()
+       {
+           try {
+               $response = new Response();
+   
+               //Instancia modelo
+               $menuModel = new MenuModel;
+   
+               //Método del modelo
+               $result = $menuModel->getMenuActual();
+   
+               //Dar respuesta
+               $response->toJSON($result);
+           } catch (Exception $e) {
+               handleException($e);
+           }
+       }
+
+
 }
