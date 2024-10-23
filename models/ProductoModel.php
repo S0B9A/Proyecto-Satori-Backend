@@ -83,7 +83,7 @@ class ProductoModel
                 $vResultado->estaciones = $estaciones;
 
                 //Ordenes
-                
+
             }
 
             //Retornar la respuesta
@@ -132,7 +132,7 @@ class ProductoModel
             $estacionModel = new EstacionModel();
 
             //Consulta sql
-            $vSql = "SELECT * FROM producto WHERE id IN (SELECT id_producto FROM estaciones_productos WHERE id_estacion = $id);";
+            $vSql = "SELECT * FROM producto WHERE id IN (SELECT id_producto FROM estaciones_productos WHERE id_estacion = $id) ;";
 
             //Ejecutar la consulta
             $vResultado = $this->enlace->ExecuteSQL($vSql);
@@ -152,6 +152,56 @@ class ProductoModel
 
             // Retornar la lista
             return $vResultado;
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
+
+    /**
+     * Crear pelicula
+     * @param $objeto pelicula a insertar
+     * @return $this->get($idMovie) - Objeto pelicula
+     */
+    //
+    public function create($objeto)
+    {
+        try {
+            //Consulta sql
+            //Identificador autoincrementable
+            $sql = "Insert into producto (nombre, descripcion, precio, tipo, categoria)" .
+                " Values ('$objeto->nombre','$objeto->descripcion',$objeto->precio,'$objeto->tipo','$objeto->categoria')";
+
+            //Ejecutar la consulta
+            //Obtener ultimo insert
+            $idproducto = $this->enlace->executeSQL_DML_last($sql);
+
+            //--- Generos ---
+            //Crear elementos a insertar en estacionesProducto
+            foreach ($objeto->estaciones as $item) {
+
+                $sql = "Insert into estaciones_productos (id_estacion, id_producto)" .
+                    " Values($item, $idproducto)";
+
+                $vResultadoG = $this->enlace->executeSQL_DML($sql);
+            }
+
+            //Retornar pelicula
+            return $this->get($idproducto);
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
+
+
+    /**
+     * Actualizar prodcuto
+     * @param $objeto producto a actualizar
+     * @return $this->get($idproducto) - Objeto producto
+     */
+    //
+    public function update($objeto)
+    {
+        try {
         } catch (Exception $e) {
             handleException($e);
         }

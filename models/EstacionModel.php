@@ -81,7 +81,7 @@ class EstacionModel
         try {
             //Consulta sql
             $vSql = "SELECT * FROM estacion WHERE id IN ( SELECT id_estacion FROM estaciones_productos  WHERE id_producto = $id)
-             ORDER BY (SELECT orden FROM estaciones_productos WHERE id_estacion = estacion.id AND id_producto = $id);";
+             ORDER BY (SELECT orden FROM estaciones_productos WHERE id_estacion = estacion.id AND id_producto = $id) desc;";
 
             //Ejecutar la consulta
             $vResultado = $this->enlace->ExecuteSQL($vSql);

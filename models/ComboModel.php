@@ -30,7 +30,6 @@ class ComboModel
         }
     }
 
-
     public function get($id)
     {
         try {

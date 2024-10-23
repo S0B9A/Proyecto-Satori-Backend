@@ -5,8 +5,27 @@ class RoutesController
     {
         //include "routes/routes.php";
         if (isset($_SERVER['REQUEST_URI']) && !empty($_SERVER['REQUEST_URI'])) {
-
-
+            //Gestion de imagenes
+            if (strpos($_SERVER['REQUEST_URI'], '/uploads/') === 0) {
+                $filePath = __DIR__ . $_SERVER['REQUEST_URI'];
+                
+                // Verificar si el archivo existe
+                if (file_exists($filePath)) {
+                    header('Content-Type: ' . mime_content_type($filePath));
+                    readfile($filePath);
+                    exit;
+                } else {
+                    http_response_code(404);
+                    echo 'Archivo no encontrado.';
+                }
+            }
+             //FIN Gestion de imagenes
+             //Solicitud preflight
+             if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+                // Terminar la solicitud de preflight
+                http_response_code(200);
+                exit();
+            }
             $routesArray = explode("/", $_SERVER['REQUEST_URI']);
             // Eliminar elementos vacíos del array
             $routesArray = array_filter($routesArray);
@@ -58,7 +77,6 @@ class RoutesController
                                     break;
 
                                 case 'POST':
-                                case 'OPTIONS':
                                     if ($action) {
                                         if (method_exists($controller, $action)) {
                                             $response->$action();
