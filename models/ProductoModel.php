@@ -166,6 +166,7 @@ class ProductoModel
     public function create($objeto)
     {
         try {
+
             //Consulta sql
             //Identificador autoincrementable
             $sql = "Insert into producto (nombre, descripcion, precio, tipo, categoria)" .

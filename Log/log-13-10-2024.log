@@ -1,4 +1,0 @@
-[13-10-2024 22:26:11] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\ProductoModel.php - line: 109 - Message: foreach() argument must be of type array|object, null given
- [13-10-2024 22:28:41] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\ProductoModel.php - line: 109 - Message: foreach() argument must be of type array|object, null given
- [13-10-2024 22:34:19] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT COUNT(id_estacion) AS total_estaciones FROM estaciones_productos  WHERE i' at line 1
- 
