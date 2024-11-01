@@ -4,7 +4,7 @@
 
 class imagenProducto
 {
-    //POST Crear
+    //PUT Actualizar
     public function create()
     {
         try {

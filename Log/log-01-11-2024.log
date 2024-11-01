@@ -1,0 +1,20 @@
+[01-11-2024 00:02:37] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Sushi' for key 'producto.nombre'
+ [01-11-2024 00:08:00] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'asdas' for key 'producto.nombre'
+ [01-11-2024 00:12:41] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Sushi' for key 'producto.nombre'
+ [01-11-2024 00:16:47] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Chow mein2' for key 'producto.nombre'
+ [01-11-2024 00:34:59] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Chow mein2' for key 'producto.nombre'
+ [01-11-2024 00:38:54] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'sebas' for key 'producto.nombre'
+ [01-11-2024 01:31:15] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Sushi234' for key 'producto.nombre'
+ [01-11-2024 01:45:59] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Sushi Rico ' for key 'producto.nombre'
+ [01-11-2024 01:52:58] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Nuevo' for key 'producto.nombre'
+ [01-11-2024 02:31:11] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'fdsfsdfsdf' for key 'producto.nombre'
+ [01-11-2024 02:43:08] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Sushidsfd' for key 'producto.nombre'
+ [01-11-2024 16:48:15] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Chow mein' for key 'producto.nombre'
+ [01-11-2024 16:50:03] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'sdffghdfssd' for key 'producto.nombre'
+ [01-11-2024 17:03:29] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'dsfsddsfhfgfg' for key 'producto.nombre'
+ [01-11-2024 17:04:17] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Out of range value for column 'precio' at row 1
+ [01-11-2024 17:05:07] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Out of range value for column 'precio' at row 1
+ [01-11-2024 20:38:07] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 87 - Message: Unknown column 'Postre' in 'field list'
+ [01-11-2024 20:38:34] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 87 - Message: Unknown column 'Postre' in 'field list'
+ [01-11-2024 20:38:54] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 87 - Message: Unknown column 'Postre' in 'field list'
+ 

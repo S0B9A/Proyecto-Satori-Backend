@@ -61,25 +61,5 @@ class ImagenModelProducto
         }
     }
 
-    //Obtener una imagen de una pelicula
-    public function getImageProducto($idProducto)
-    {
-        try {
-
-            //Consulta sql
-            $vSql = "SELECT imagen FROM producto where id=$idProducto";
-
-            //Ejecutar la consulta
-            $vResultado = $this->enlace->ExecuteSQL($vSql);
-
-            if (!empty($vResultado)) {
-                // Retornar el objeto
-                return $vResultado[0];
-
-            }
-            return $vResultado;
-        } catch (Exception $e) {
-            handleException($e);
-        }
-    }
+    
 }

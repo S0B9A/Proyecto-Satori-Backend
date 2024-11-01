@@ -158,9 +158,9 @@ class ProductoModel
     }
 
     /**
-     * Crear pelicula
-     * @param $objeto pelicula a insertar
-     * @return $this->get($idMovie) - Objeto pelicula
+     * Crear producto
+     * @param $objeto Producto a insertar
+     * @return $this->get($idProducto) - Objeto Producto
      */
     //
     public function create($objeto)
@@ -169,8 +169,8 @@ class ProductoModel
 
             //Consulta sql
             //Identificador autoincrementable
-            $sql = "Insert into producto (nombre, descripcion, precio, tipo, categoria)" .
-                " Values ('$objeto->nombre','$objeto->descripcion',$objeto->precio,'$objeto->tipo','$objeto->categoria')";
+            $sql = "Insert into producto (nombre, descripcion, precio, tipo, categoria, imagen)" .
+                " Values ('$objeto->nombre','$objeto->descripcion',$objeto->precio,'$objeto->tipo','$objeto->categoria','noImagen.png')";
 
             //Ejecutar la consulta
             //Obtener ultimo insert
@@ -186,16 +186,15 @@ class ProductoModel
                 $vResultadoG = $this->enlace->executeSQL_DML($sql);
             }
 
-            //Retornar pelicula
+            //Retornar Producto
             return $this->get($idproducto);
         } catch (Exception $e) {
             handleException($e);
         }
     }
 
-
     /**
-     * Actualizar prodcuto
+     * Actualizar producto
      * @param $objeto producto a actualizar
      * @return $this->get($idproducto) - Objeto producto
      */
@@ -203,6 +202,37 @@ class ProductoModel
     public function update($objeto)
     {
         try {
+
+            // Consulta SQL
+            $sql = "UPDATE producto SET 
+                    nombre = '$objeto->nombre',
+                    descripcion = '$objeto->descripcion',
+                    precio = $objeto->precio,
+                    tipo = '$objeto->tipo',
+                    categoria = '$objeto->categoria'
+                    WHERE id = $objeto->id";
+
+            //Ejecutar la consulta
+            $cResults = $this->enlace->executeSQL_DML($sql);
+
+            //--- Estaciones ---
+            //Eliminar estaciones asociados al producto
+            $sql = "Delete from estaciones_productos where id_producto=$objeto->id";
+            $vResultadoD = $this->enlace->executeSQL_DML($sql);
+
+
+            //Crear elementos a insertar en estacionesProducto
+            foreach ($objeto->estaciones as $item) {
+
+                $sql = "Insert into estaciones_productos (id_estacion, id_producto)" .
+                    " Values($item, $objeto->id)";
+
+                $vResultadoG = $this->enlace->executeSQL_DML($sql);
+            }
+
+
+            //Retornar producto actualizado
+            return $this->get($objeto->id);
         } catch (Exception $e) {
             handleException($e);
         }

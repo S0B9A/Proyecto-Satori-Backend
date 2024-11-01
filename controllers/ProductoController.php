@@ -46,7 +46,7 @@ class producto
 
             //Obtener json enviado
             $inputJSON = $request->getJSON();
-     
+
             //Instancia del modelo
             $productoModel = new ProductoModel();
 
@@ -55,7 +55,6 @@ class producto
 
             //Dar respuesta
             $response->toJSON($result);
-
         } catch (Exception $e) {
             handleException($e);
         }
@@ -65,6 +64,21 @@ class producto
     public function update()
     {
         try {
+
+            $request = new Request();
+            $response = new Response();
+
+            //Obtener json enviado
+            $inputJSON = $request->getJSON();
+
+             //Instancia del modelo
+             $productoModel = new ProductoModel();
+
+            //Acción del modelo a ejecutar
+            $result = $productoModel->update($inputJSON);
+
+            //Dar respuesta
+            $response->toJSON($result);
         } catch (Exception $e) {
             handleException($e);
         }
