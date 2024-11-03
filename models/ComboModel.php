@@ -64,7 +64,7 @@ class ComboModel
     {
         try {
             //Consulta sql
-            $vSql = "SELECT * FROM combo WHERE id IN (SELECT id_combo FROM menus_productos WHERE id_menu = $id);";
+            $vSql = "SELECT * FROM combo WHERE id IN (SELECT id_combo FROM menus_combos WHERE id_menu = $id);";
 
             //Ejecutar la consulta
             $vResultado = $this->enlace->ExecuteSQL($vSql);

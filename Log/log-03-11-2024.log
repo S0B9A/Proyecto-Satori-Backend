@@ -5,4 +5,7 @@
  [03-11-2024 00:32:29] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Combo Especial' for key 'combo.nombre'
  [03-11-2024 00:55:16] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'Crear' in 'where clause'
  [03-11-2024 00:55:16] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'Crear' in 'where clause'
+ [03-11-2024 19:08:19] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 87 - Message: Field 'id_producto' doesn't have a default value
+ [03-11-2024 19:10:17] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Menu Sebas' for key 'menu.nombre'
+ [03-11-2024 22:10:23] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Incorrect date value: '2024-11-17T06:00:00.000Z' for column 'fecha_inicio' at row 1
  
