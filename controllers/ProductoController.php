@@ -71,8 +71,8 @@ class producto
             //Obtener json enviado
             $inputJSON = $request->getJSON();
 
-             //Instancia del modelo
-             $productoModel = new ProductoModel();
+            //Instancia del modelo
+            $productoModel = new ProductoModel();
 
             //Acción del modelo a ejecutar
             $result = $productoModel->update($inputJSON);

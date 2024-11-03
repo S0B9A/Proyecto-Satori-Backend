@@ -23,7 +23,7 @@ require_once "models/ComboModel.php";
 require_once "models/MenuModel.php";
 require_once "models/EstacionModel.php";
 require_once "models/ImagenModelProducto.php";
-
+require_once "models/ImagenModelCombo.php";
 
 
 /***--- Agregar todos los controladores*/
@@ -33,6 +33,7 @@ require_once "controllers/ComboController.php";
 require_once "controllers/MenuController.php";
 require_once "controllers/EstacionController.php";
 require_once "controllers/ImagenProductoController.php";
+require_once "controllers/ImagenComboController.php";
 
 
 //Enrutador

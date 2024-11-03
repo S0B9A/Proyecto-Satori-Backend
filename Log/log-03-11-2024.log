@@ -1,0 +1,8 @@
+[03-11-2024 00:13:23] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\ProductoModel.php - line: 173 - Message: Undefined property: stdClass::$nombre
+ [03-11-2024 00:13:24] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\ProductoModel.php - line: 173 - Message: Undefined property: stdClass::$nombre
+ [03-11-2024 00:13:38] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\ProductoModel.php - line: 173 - Message: Undefined property: stdClass::$tipo
+ [03-11-2024 00:13:52] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Data truncated for column 'categoria' at row 1
+ [03-11-2024 00:32:29] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'Combo Especial' for key 'combo.nombre'
+ [03-11-2024 00:55:16] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'Crear' in 'where clause'
+ [03-11-2024 00:55:16] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'Crear' in 'where clause'
+ 

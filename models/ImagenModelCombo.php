@@ -1,5 +1,5 @@
 <?php
-class ImagenModelProducto
+class ImagenModelCombo
 {
     private $upload_path = 'uploads/';
     private $valid_extensions = array('jpeg', 'jpg', 'png', 'gif');
@@ -10,12 +10,12 @@ class ImagenModelProducto
         $this->enlace = new MySqlConnect();
     }
 
-    //Subir imagen de un producto registrada
+    //Subir imagen de un combo registrada
     public function uploadFile($object)
     {
         try {
             $file = $object['file'];
-            $producto_nombre = $object['nombre'];
+            $combo_nombre = $object['nombre'];
 
             //Obtener la información del archivo
             $fileName = $file['name'];
@@ -28,7 +28,7 @@ class ImagenModelProducto
                 //Crear un nombre único para el archivo
                 $fileExt = explode('.', $fileName);
                 $fileActExt = strtolower(end($fileExt));
-                $fileName = "producto-" . uniqid() . "." . $fileActExt;
+                $fileName = "combo-" . uniqid() . "." . $fileActExt;
 
                 //Validar el tipo de archivo
                 if (in_array($fileActExt, $this->valid_extensions)) {
@@ -43,7 +43,7 @@ class ImagenModelProducto
                             if (move_uploaded_file($tempPath, $this->upload_path . $fileName)) {
 
                                 //Guardarlo en la BD
-                                $sql = "UPDATE producto SET imagen = '$fileName' WHERE nombre = '$producto_nombre'";
+                                $sql = "UPDATE combo SET imagen = '$fileName' WHERE nombre = '$combo_nombre'";
 
                                 $vResultado = $this->enlace->executeSQL_DML($sql);
 

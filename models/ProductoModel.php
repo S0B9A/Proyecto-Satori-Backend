@@ -18,12 +18,29 @@ class ProductoModel
     public function all()
     {
         try {
+            $estacionModel = new EstacionModel();
             //Consulta SQL
             $vSQL = "SELECT * FROM producto ORDER BY nombre DESC;";
             //Ejecutar la consulta
             $vResultado = $this->enlace->ExecuteSQL($vSQL);
             //Retornar la respuesta
 
+            if (!empty($vResultado)) {
+                // Asumiendo que $vResultado es un array de objetos
+                for ($i = 0; $i < count($vResultado); $i++) {
+                    // Obtén el ID del producto
+                    $productoID = $vResultado[$i]->id;
+            
+                    // Obtén la cantidad de estaciones para el producto
+                    $estaciones = $estacionModel->getCantidadEstacionesPorProductoID($productoID);
+            
+                    // Asigna la cantidad de estaciones al objeto en la posición $i
+                    $vResultado[$i]->CantidadEstaciones = $estaciones;
+                }
+            }
+
+            
+            
             return $vResultado;
         } catch (Exception $e) {
             handleException($e);
@@ -81,8 +98,6 @@ class ProductoModel
                 $productoID =  $vResultado->id;
                 $estaciones = $estacionModel->getEstacionesPorProductoID($productoID);
                 $vResultado->estaciones = $estaciones;
-
-                //Ordenes
 
             }
 
@@ -166,6 +181,7 @@ class ProductoModel
     public function create($objeto)
     {
         try {
+            $contador = 1;
 
             //Consulta sql
             //Identificador autoincrementable
@@ -176,14 +192,16 @@ class ProductoModel
             //Obtener ultimo insert
             $idproducto = $this->enlace->executeSQL_DML_last($sql);
 
-            //--- Generos ---
+            //--- estaciones ---
             //Crear elementos a insertar en estacionesProducto
             foreach ($objeto->estaciones as $item) {
 
-                $sql = "Insert into estaciones_productos (id_estacion, id_producto)" .
-                    " Values($item, $idproducto)";
+                $sql = "Insert into estaciones_productos (id_estacion, id_producto, orden)" .
+                    " Values($item, $idproducto, $contador)";
 
                 $vResultadoG = $this->enlace->executeSQL_DML($sql);
+
+                $contador++;
             }
 
             //Retornar Producto
@@ -202,6 +220,7 @@ class ProductoModel
     public function update($objeto)
     {
         try {
+            $contador = 1;
 
             // Consulta SQL
             $sql = "UPDATE producto SET 
@@ -223,11 +242,14 @@ class ProductoModel
 
             //Crear elementos a insertar en estacionesProducto
             foreach ($objeto->estaciones as $item) {
+                
 
-                $sql = "Insert into estaciones_productos (id_estacion, id_producto)" .
-                    " Values($item, $objeto->id)";
+                $sql = "Insert into estaciones_productos (id_estacion, id_producto, orden)" .
+                    " Values($item, $objeto->id, $contador)";
 
                 $vResultadoG = $this->enlace->executeSQL_DML($sql);
+
+                $contador++;
             }
 
 
