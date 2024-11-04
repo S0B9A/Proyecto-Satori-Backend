@@ -4,5 +4,5 @@ return [
     'DB_USERNAME' => 'root',
     'DB_PASSWORD' => 'sebas200409',
     'DB_HOST' => 'localhost',
-    'DB_DBNAME' => 'bd_satoriasiancuisine',
+    'DB_DBNAME' => 'bd_satoriasiancuisine2',
 ];
