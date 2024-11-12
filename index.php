@@ -24,6 +24,9 @@ require_once "models/MenuModel.php";
 require_once "models/EstacionModel.php";
 require_once "models/ImagenModelProducto.php";
 require_once "models/ImagenModelCombo.php";
+require_once "models/UsuarioModel.php";
+require_once "models/PedidoProductoModel.php";
+require_once "models/PedidoModel.php";
 
 
 /***--- Agregar todos los controladores*/
@@ -34,6 +37,8 @@ require_once "controllers/MenuController.php";
 require_once "controllers/EstacionController.php";
 require_once "controllers/ImagenProductoController.php";
 require_once "controllers/ImagenComboController.php";
+require_once "controllers/UsuarioController.php";
+require_once "controllers/PedidoController.php";
 
 
 //Enrutador

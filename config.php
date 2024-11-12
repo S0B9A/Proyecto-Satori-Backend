@@ -2,7 +2,7 @@
 return [
     'LOG_PATH' => __DIR__ . '/Log',
     'DB_USERNAME' => 'root',
-    'DB_PASSWORD' => 'sebas200409',
+    'DB_PASSWORD' => '123456',
     'DB_HOST' => 'localhost',
-    'DB_DBNAME' => 'bd_satoriasiancuisine2',
+    'DB_DBNAME' => 'bd_satoriasiancuisine',
 ];
