@@ -1,0 +1,7 @@
+[12-11-2024 21:43:36] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\routes\RoutesController.php - line: 8 - Message: Class "AuthMiddleware" not found
+ [12-11-2024 21:44:15] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\routes\RoutesController.php - line: 8 - Message: Class "AuthMiddleware" not found
+ [12-11-2024 21:44:33] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\routes\RoutesController.php - line: 8 - Message: Class "AuthMiddleware" not found
+ [12-11-2024 22:06:10] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 71 - Message: Undefined property: stdClass::$contraseña
+ [12-11-2024 22:10:02] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 67 - Message: Trying to access array offset on value of type null
+ [12-11-2024 22:10:30] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 109 - Message: Undefined property: stdClass::$nombre
+ 

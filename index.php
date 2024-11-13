@@ -15,6 +15,7 @@ require_once "controllers/core/Logger.php";
 require_once "controllers/core/MySqlConnect.php";
 require_once "controllers/core/Request.php";
 require_once "controllers/core/Response.php";
+require_once "middleware/AuthMiddleware.php";
 
 
 /***--- Agregar todos los modelos*/
@@ -24,6 +25,7 @@ require_once "models/MenuModel.php";
 require_once "models/EstacionModel.php";
 require_once "models/ImagenModelProducto.php";
 require_once "models/ImagenModelCombo.php";
+require_once "models/RolModel.php";
 require_once "models/UsuarioModel.php";
 require_once "models/PedidoProductoModel.php";
 require_once "models/PedidoModel.php";
