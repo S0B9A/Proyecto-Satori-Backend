@@ -31,6 +31,29 @@ class PedidoModel
         }
     }
 
+    public function PedidosPorUsuarioID($idUsuario)
+    {
+        try {
+            //Consulta sql
+            $vSql = "SELECT * FROM pedido where id_cliente = $idUsuario order by fecha asc;";
+
+            //Ejecutar la consulta
+            $vResultado = $this->enlace->ExecuteSQL($vSql);
+
+            if (!empty($vResultado) && is_array($vResultado)) {
+
+                for ($i = 0; $i <= count($vResultado) - 1; $i++) {
+                    $vResultado[$i] = $this->get($vResultado[$i]->id);
+                }
+            }
+
+            // Retornar el objeto
+            return $vResultado;
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function get($id)
     {
         $vResultado = null;

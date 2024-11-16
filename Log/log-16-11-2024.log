@@ -1,0 +1,13 @@
+[16-11-2024 19:01:37] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'userData.id' in 'where clause'
+ [16-11-2024 19:01:37] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'userData.id' in 'where clause'
+ [16-11-2024 19:03:03] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ [16-11-2024 19:03:04] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ [16-11-2024 19:03:26] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ [16-11-2024 19:03:27] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ [16-11-2024 19:03:33] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ [16-11-2024 19:03:33] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ [16-11-2024 19:03:38] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ [16-11-2024 19:03:38] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ [16-11-2024 19:04:37] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ [16-11-2024 19:04:38] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column '$' in 'where clause'
+ 
