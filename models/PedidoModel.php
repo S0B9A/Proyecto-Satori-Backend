@@ -8,6 +8,7 @@ class PedidoModel
 
         $this->enlace = new MySqlConnect();
     }
+
     public function all()
     {
         try {
@@ -30,6 +31,7 @@ class PedidoModel
             die($e->getMessage());
         }
     }
+    
 
     public function PedidosPorUsuarioID($idUsuario)
     {

@@ -23,6 +23,25 @@ class usuario
         }
     }
 
+    //GET listar Clientes
+    public function allClientes()
+    {
+        try {
+            $response = new Response();
+
+            //Instancia modelo
+            $usuarioModel = new UsuarioModel();
+
+            //Método del modelo
+            $result = $usuarioModel->allClientes();
+
+            //Dar respuesta
+            $response->toJSON($result);
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
+
     public function get($param)
     {
         try {
@@ -65,7 +84,7 @@ class usuario
 
         $usuario = new UsuarioModel();
         $result = $usuario->create($inputJSON);
-        
+
         //Dar respuesta
         $response->toJSON($result);
     }

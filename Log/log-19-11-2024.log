@@ -1,0 +1,4 @@
+[19-11-2024 20:14:14] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Duplicate entry 'usuario1@prueba.com' for key 'email'
+ [19-11-2024 21:13:35] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [19-11-2024 21:13:45] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ 
