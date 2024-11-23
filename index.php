@@ -28,6 +28,7 @@ require_once "models/ImagenModelCombo.php";
 require_once "models/RolModel.php";
 require_once "models/UsuarioModel.php";
 require_once "models/PedidoProductoModel.php";
+require_once "models/PedidoComboModel.php";
 require_once "models/PedidoModel.php";
 require_once "models/PreciosModel.php";
 

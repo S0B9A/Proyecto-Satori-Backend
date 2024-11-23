@@ -1,5 +1,5 @@
 <?php
-class PedidoProductoModel
+class PedidoComboModel
 {
     public $enlace;
     public function __construct()
@@ -11,7 +11,7 @@ class PedidoProductoModel
     {
         try {
             //Consulta sql
-            $vSql = "SELECT * FROM pedidos_productos;";
+            $vSql = "SELECT * FROM pedidos_combos;";
 
             //Ejecutar la consulta
             $vResultado = $this->enlace->ExecuteSQL($vSql);
@@ -23,15 +23,15 @@ class PedidoProductoModel
         }
     }
 
-    public function getPedidoProductos($id)
+    public function getPedidoCombos($id)
     {
         try {
 
             //Consulta sql
-            $vSql = "SELECT pp.id_pedido, pp.id_producto, pp.cantidad, pp.precio, pp.subtotal, p.nombre, p.imagen
-            FROM pedidos_productos pp, producto p
-            where p.id = pp.id_producto
-            and pp.id_pedido = $id";
+            $vSql = "SELECT pc.id_pedido, pc.id_combo, pc.cantidad, pc.precio, pc.subtotal, c.nombre, c.imagen
+            FROM pedidos_combos pc, combo c
+            where c.id = pc.id_combo
+            and pc.id_pedido = $id";
 
             //Ejecutar la consulta
             $vResultado = $this->enlace->ExecuteSQL($vSql);

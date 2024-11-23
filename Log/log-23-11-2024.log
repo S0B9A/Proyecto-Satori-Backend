@@ -1,0 +1,59 @@
+[23-11-2024 04:00:17] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:00:18] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:29:50] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:29:51] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:29:54] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:29:54] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:29:58] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:29:58] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:32:27] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:32:28] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:38:12] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 04:38:13] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'undefined' in 'where clause'
+ [23-11-2024 18:42:31] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:42:37] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:42:47] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:42:59] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:42:59] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:42:59] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:43:00] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:43:00] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:43:00] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:43:00] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:43:21] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 18:43:30] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\UsuarioModel.php - line: 83 - Message: Trying to access array offset on value of type null
+ [23-11-2024 19:56:50] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 
+              '2024-11-23', 
+              'Pendiente de pago', 
+       ...' at line 6
+ [23-11-2024 19:57:27] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 
+              '2024-11-23', 
+              'Pendiente de pago', 
+       ...' at line 6
+ [23-11-2024 19:57:50] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 
+              '2024-11-23', 
+              'Pendiente de pago', 
+       ...' at line 6
+ [23-11-2024 20:00:49] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 
+              '2024-11-23', 
+              'Pendiente de pago', 
+       ...' at line 6
+ [23-11-2024 20:03:21] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 
+              'Pendiente de pago', 
+              'Tienda', 
+           ...' at line 6
+ [23-11-2024 20:04:10] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 
+              '2024-11-23', 
+              'Tienda', 
+              'Efe...' at line 6
+ [23-11-2024 20:05:57] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 
+              '2024-11-23', 
+              'Pendiente de pago', 
+       ...' at line 6
+ [23-11-2024 20:10:29] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'pp.cantidadProductos' in 'field list'
+ [23-11-2024 20:10:42] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'pp.cantidadProductos' in 'field list'
+ [23-11-2024 20:15:47] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'pp.cantidadProductos' in 'field list'
+ [23-11-2024 21:09:36] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'p' in 'field list'
+ [23-11-2024 21:09:48] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 46 - Message: Unknown column 'p' in 'field list'
+ [23-11-2024 21:54:46] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Cannot add or update a child row: a foreign key constraint fails (`bd_satoriasiancuisine`.`pedido`, CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `usuario` (`id`))
+ 

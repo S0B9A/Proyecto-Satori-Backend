@@ -1,5 +1,7 @@
 <?php
+
 use Pusher\Pusher;
+
 class PedidoModel
 {
     public $enlace;
@@ -31,7 +33,7 @@ class PedidoModel
             die($e->getMessage());
         }
     }
-    
+
 
     public function PedidosPorUsuarioID($idUsuario)
     {
@@ -63,6 +65,7 @@ class PedidoModel
         try {
 
             $PedidoProductoModelo = new PedidoProductoModel();
+            $PedidoComboModelo = new PedidoComboModel();
             $usuarioModelo = new UsuarioModel();
 
             //Consulta sql
@@ -78,6 +81,9 @@ class PedidoModel
 
                 //Lista de productos
                 $vResultado->productos = $PedidoProductoModelo->getPedidoProductos($id);
+
+                 //Lista de combos
+                 $vResultado->combos = $PedidoComboModelo->getPedidoCombos($id);
             }
 
             // Retornar el objeto
@@ -91,17 +97,15 @@ class PedidoModel
     {
 
         try {
-            $fechaReact = $objeto->fecha;
+            $fechaReact = $objeto->pedido_date;
             // Crear un objeto DateTime a partir de la cadena de fecha
             // Convertir la fecha al formato deseado para la base de datos
             $fechaBD = date('Y-m-d', strtotime($fechaReact));
 
             //Consulta sql
-
-            $vSql = "INSERT INTO pedido
-                (id_cliente, estado, metodo_entrega, direccion, fecha, costo)
-                VALUES
-                ($objeto->id_cliente,'$objeto->estado','$objeto->metodo_entrega','$objeto->direccion','$fechaBD',$objeto->costo);";
+            $vSql = "INSERT INTO pedido (id_cliente, id_encargado, fecha, estado, metodo_entrega, metodo_pago, direccion, costo, subtotal, impuesto, Observacion_combo, Observacion_pedido) " .
+            "VALUES ('$objeto->cliente_id', '$objeto->encargado_id', '$fechaBD', 'Pendiente de pago', '$objeto->tipo_pedido', '$objeto->MetodoPago', '$objeto->indicaciones_ubicacion', '$objeto->total', '$objeto->subtotal', '$objeto->impuesto', '$objeto->ObservacionCombos', '$objeto->ObservacionProducto')";
+    
 
             //Ejecutar la consulta
             $idPedido = $this->enlace->executeSQL_DML_last($vSql);
@@ -109,9 +113,19 @@ class PedidoModel
             //Insertar productos
             foreach ($objeto->productos as $item) {
                 $sql = "INSERT INTO pedidos_productos
-                    (id_pedido, id_producto, precio, cantidadProductos, subtotal, observaciones, total)
+                    (id_pedido, id_producto, precio, cantidad, subtotal)
                     VALUES
-                    ($idPedido, $item->id_producto, $item->precio, $item->cantidadProductos, $item->subtotal, '$item->observaciones' , $item->total);";
+                    ($idPedido, $item->id, $item->precio, $item->cantidad, $item->subtotal);";
+
+                $vResultadoM = $this->enlace->executeSQL_DML($sql);
+            }
+
+            //Insertar combos
+            foreach ($objeto->combos as $item) {
+                $sql = "INSERT INTO pedidos_combos
+                        (id_pedido, id_combo, precio, cantidad, subtotal)
+                        VALUES
+                        ($idPedido, $item->id, $item->precio, $item->cantidad, $item->subtotal);";
 
                 $vResultadoM = $this->enlace->executeSQL_DML($sql);
             }
@@ -162,7 +176,6 @@ class PedidoModel
 
             // Retornar pedido actualizado
             return $pedidoActualizado;
-
         } catch (Exception $e) {
             handleException($e);
         }
