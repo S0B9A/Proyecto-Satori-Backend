@@ -1,0 +1,7 @@
+[24-11-2024 20:55:56] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\PedidoModel.php - line: 173 - Message: Undefined property: stdClass::$id
+ [24-11-2024 20:56:36] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\PedidoModel.php - line: 173 - Message: Undefined property: stdClass::$id
+ [24-11-2024 20:59:29] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\PedidoModel.php - line: 173 - Message: Undefined property: stdClass::$id
+ [24-11-2024 21:02:12] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\PedidoModel.php - line: 173 - Message: Undefined property: stdClass::$id
+ [24-11-2024 21:08:03] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 87 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id =' at line 1
+ [24-11-2024 21:09:30] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 87 - Message: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 21' at line 1
+ 

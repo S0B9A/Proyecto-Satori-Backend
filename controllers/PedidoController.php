@@ -56,6 +56,20 @@ class pedido
         }
     }
 
+    public function getPedidoMasReciente()
+    {
+        try {
+            $response = new Response();
+            $pedidoModel = new PedidoModel();
+            $result = $pedidoModel->getPedidoMasReciente();
+
+            //Dar respuesta
+            $response->toJSON($result);
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
+
     //POST Crear
     public function create()
     {
@@ -78,6 +92,34 @@ class pedido
             handleException($e);
         }
     }
+
+
+
+    //PUT Pago de pedido
+    public function updatePedidoPorPago()
+    {
+        try {
+
+            $request = new Request();
+            $response = new Response();
+
+            //Obtener json enviado
+            $inputJSON = $request->getJSON();
+
+            //Instancia del modelo
+            $pedidoModel = new PedidoModel();
+
+            //Acción del modelo a ejecutar
+            $result = $pedidoModel->updatePedidoPorPago($inputJSON);
+
+            //Dar respuesta
+            $response->toJSON($result);
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
+
+
 
     //PUT actualizar
     public function update()

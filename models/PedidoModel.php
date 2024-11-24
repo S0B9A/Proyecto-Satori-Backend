@@ -82,8 +82,30 @@ class PedidoModel
                 //Lista de productos
                 $vResultado->productos = $PedidoProductoModelo->getPedidoProductos($id);
 
-                 //Lista de combos
-                 $vResultado->combos = $PedidoComboModelo->getPedidoCombos($id);
+                //Lista de combos
+                $vResultado->combos = $PedidoComboModelo->getPedidoCombos($id);
+            }
+
+            // Retornar el objeto
+            return $vResultado;
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+
+
+    public function getPedidoMasReciente()
+    {
+        $vResultado = null;
+        try {
+            //Consulta sql
+            $vSql = " SELECT *  FROM pedido ORDER BY id DESC LIMIT 1;";
+
+            //Ejecutar la consulta
+            $vResultado = $this->enlace->ExecuteSQL($vSql);
+            if (!empty($vResultado)) {
+                $vResultado = $vResultado[0];
             }
 
             // Retornar el objeto
@@ -95,7 +117,6 @@ class PedidoModel
 
     public function create($objeto)
     {
-
         try {
             $fechaReact = $objeto->pedido_date;
             // Crear un objeto DateTime a partir de la cadena de fecha
@@ -103,9 +124,9 @@ class PedidoModel
             $fechaBD = date('Y-m-d', strtotime($fechaReact));
 
             //Consulta sql
-            $vSql = "INSERT INTO pedido (id_cliente, id_encargado, fecha, estado, metodo_entrega, metodo_pago, direccion, costo, subtotal, impuesto, Observacion_combo, Observacion_pedido) " .
-            "VALUES ('$objeto->cliente_id', '$objeto->encargado_id', '$fechaBD', 'Pendiente de pago', '$objeto->tipo_pedido', '$objeto->MetodoPago', '$objeto->indicaciones_ubicacion', '$objeto->total', '$objeto->subtotal', '$objeto->impuesto', '$objeto->ObservacionCombos', '$objeto->ObservacionProducto')";
-    
+            $vSql = "INSERT INTO pedido (id_cliente, id_encargado, fecha, estado, metodo_entrega, direccion, costo, subtotal, impuesto, Observacion_combo, Observacion_pedido) " .
+                "VALUES ('$objeto->cliente_id', '$objeto->encargado_id', '$fechaBD', 'Pendiente de pago', '$objeto->tipo_pedido', '$objeto->indicaciones_ubicacion', '$objeto->total', '$objeto->subtotal', '$objeto->impuesto', '$objeto->ObservacionCombos', '$objeto->ObservacionProducto')";
+
 
             //Ejecutar la consulta
             $idPedido = $this->enlace->executeSQL_DML_last($vSql);
@@ -136,6 +157,31 @@ class PedidoModel
             die($e->getMessage());
         }
     }
+
+
+    /**
+     * Actualizar producto
+     * @param $objeto producto a actualizar
+     * @return $this->get($idproducto) - Objeto producto
+     */
+    //
+    public function updatePedidoPorPago($objeto)
+    {
+        try {
+
+            // Consulta SQL
+            $sql = "UPDATE pedido SET metodo_pago = '$objeto->metodo_pago', estado = 'Aceptada'  WHERE id = $objeto->id";
+
+            //Ejecutar la consulta
+            $cResults = $this->enlace->executeSQL_DML($sql);
+
+            //Retornar producto actualizado
+            return $this->get($objeto->id);
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
+
 
     /**
      * Actualizar pedido
