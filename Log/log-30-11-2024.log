@@ -1,0 +1,4 @@
+[30-11-2024 20:52:01] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\CocinaModel.php - line: 41 - Message: Undefined property: stdClass::$id_producto
+ [30-11-2024 22:36:52] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\CocinaModel.php - line: 91 - Message: foreach() argument must be of type array|object, null given
+ [30-11-2024 22:37:03] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\CocinaModel.php - line: 91 - Message: foreach() argument must be of type array|object, null given
+ 

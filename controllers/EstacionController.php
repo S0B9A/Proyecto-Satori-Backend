@@ -36,4 +36,18 @@ class estacion
             handleException($e);
         }
     }
+
+    public function getEstacionesPorProductoID($param)
+    {
+        try {
+            $response = new Response();
+            $estacion = new EstacionModel;
+            $result = $estacion->getEstacionesPorProductoID($param);
+
+            //Dar respuesta
+            $response->toJSON($result);
+        } catch (Exception $e) {
+            handleException($e);
+        }
+    }
 }

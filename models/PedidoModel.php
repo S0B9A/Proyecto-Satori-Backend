@@ -178,6 +178,9 @@ class PedidoModel
 
             $pusher->trigger('pedido-channel', 'nuevo-pedido', $data);
 
+            $cocinaModel = new CocinaModel();
+            $cocinaModel->create($pedidoCreado->id);
+
             // Retornar el objeto creado
             return $pedidoCreado;
         } catch (Exception $e) {
@@ -248,8 +251,36 @@ class PedidoModel
             //Ejecutar la consulta
             $cResults = $this->enlace->executeSQL_DML($sql);
 
-            //Retornar producto actualizado
-            return $this->get($objeto->id);
+
+            // Obtén el pedido actualizado
+            $pedidoActualizado = $this->get($objeto->id);
+
+            // Configura Pusher
+            $options = [
+                'cluster' => 'us2', // Cambia esto por el cluster que te asigne Pusher
+                'useTLS' => true
+            ];
+            $pusher = new Pusher(
+                '6044eb48c974063b6561', // Reemplaza con tu clave de la aplicación
+                'c37b577f1bc42a492ac8',       // Reemplaza con tu secreto de la aplicación
+                '1893850',           // Reemplaza con tu ID de la aplicación
+                $options
+            );
+
+            // Envía el evento a Pusher
+            $data = [
+                'pedido' => [
+                    'id' => $pedidoActualizado->id,
+                    'estado' => $pedidoActualizado->estado
+                ]
+            ];
+
+            $pusher->trigger('pedido-channel', 'estado-actualizado', $data);
+
+
+
+            // Retornar pedido actualizado
+            return $pedidoActualizado;
         } catch (Exception $e) {
             handleException($e);
         }
