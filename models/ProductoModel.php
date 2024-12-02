@@ -30,17 +30,15 @@ class ProductoModel
                 for ($i = 0; $i < count($vResultado); $i++) {
                     // Obtén el ID del producto
                     $productoID = $vResultado[$i]->id;
-            
+
                     // Obtén la cantidad de estaciones para el producto
                     $estaciones = $estacionModel->getCantidadEstacionesPorProductoID($productoID);
-            
+
                     // Asigna la cantidad de estaciones al objeto en la posición $i
                     $vResultado[$i]->CantidadEstaciones = $estaciones;
                 }
             }
 
-            
-            
             return $vResultado;
         } catch (Exception $e) {
             handleException($e);
@@ -53,6 +51,7 @@ class ProductoModel
         try {
 
             $estacionModel = new EstacionModel();
+            $ingredienteModel = new IngredienteModel();
 
             //Consulta sql
             $vSql = "SELECT * fROM producto where id=$id";
@@ -67,7 +66,10 @@ class ProductoModel
                 //Producto
                 $productoID =  $vResultado->id;
                 $estaciones = $estacionModel->getEstacionesPorProductoID($productoID);
+                $ingredientes = $ingredienteModel->getIngredientePorProductoID($productoID);
+                
                 $vResultado->estaciones = $estaciones;
+                $vResultado->ingredientes = $ingredientes;
             }
 
             //Retornar la respuesta
@@ -98,7 +100,6 @@ class ProductoModel
                 $productoID =  $vResultado->id;
                 $estaciones = $estacionModel->getEstacionesPorProductoID($productoID);
                 $vResultado->estaciones = $estaciones;
-
             }
 
             //Retornar la respuesta
@@ -195,13 +196,18 @@ class ProductoModel
             //--- estaciones ---
             //Crear elementos a insertar en estacionesProducto
             foreach ($objeto->estaciones as $item) {
-
                 $sql = "Insert into estaciones_productos (id_estacion, id_producto, orden)" .
                     " Values($item, $idproducto, $contador)";
-
                 $vResultadoG = $this->enlace->executeSQL_DML($sql);
-
                 $contador++;
+            }
+
+            //--- ingredientes ---
+            //Crear elementos a insertar en ingredienteProducto
+            foreach ($objeto->ingredientes as $item) {
+                $sql = "Insert into producto_ingrediente (id_producto, id_ingrediente)" .
+                    " Values($idproducto, $item)";
+                $vResultadoG = $this->enlace->executeSQL_DML($sql);
             }
 
             //Retornar Producto
@@ -242,14 +248,23 @@ class ProductoModel
 
             //Crear elementos a insertar en estacionesProducto
             foreach ($objeto->estaciones as $item) {
-                
-
                 $sql = "Insert into estaciones_productos (id_estacion, id_producto, orden)" .
                     " Values($item, $objeto->id, $contador)";
-
                 $vResultadoG = $this->enlace->executeSQL_DML($sql);
-
                 $contador++;
+            }
+
+            //--- ingredientes ---
+            //Eliminar ingredientes asociados al producto
+            $sql = "Delete from producto_ingrediente where id_producto=$objeto->id";
+            $vResultadoD = $this->enlace->executeSQL_DML($sql);
+
+
+            //Crear elementos a insertar en ingredienteProducto
+            foreach ($objeto->ingredientes as $item) {
+                $sql = "Insert into producto_ingrediente (id_producto, id_ingrediente)" .
+                    " Values($objeto->id, $item)";
+                $vResultadoG = $this->enlace->executeSQL_DML($sql);
             }
 
 

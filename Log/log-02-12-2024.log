@@ -1,0 +1,12 @@
+[02-12-2024 00:24:54] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\ProductoModel.php - line: 209 - Message: Undefined property: stdClass::$id
+ [02-12-2024 00:29:56] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\models\ProductoModel.php - line: 209 - Message: Undefined property: stdClass::$id
+ [02-12-2024 00:57:37] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\index.php - line: 49 - Message: require_once(controllers/cocinaController.php.php): Failed to open stream: No such file or directory
+ [02-12-2024 00:57:40] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\index.php - line: 49 - Message: require_once(controllers/cocinaController.php.php): Failed to open stream: No such file or directory
+ [02-12-2024 00:57:45] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\index.php - line: 49 - Message: require_once(controllers/cocinaController.php.php): Failed to open stream: No such file or directory
+ [02-12-2024 00:57:45] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\index.php - line: 49 - Message: require_once(controllers/cocinaController.php.php): Failed to open stream: No such file or directory
+ [02-12-2024 00:57:52] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\index.php - line: 49 - Message: require_once(controllers/cocinaController.php.php): Failed to open stream: No such file or directory
+ [02-12-2024 00:57:53] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\index.php - line: 49 - Message: require_once(controllers/cocinaController.php.php): Failed to open stream: No such file or directory
+ [02-12-2024 00:57:53] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\index.php - line: 49 - Message: require_once(controllers/cocinaController.php.php): Failed to open stream: No such file or directory
+ [02-12-2024 00:58:01] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\index.php - line: 49 - Message: require_once(controllers/cocinaController.php.php): Failed to open stream: No such file or directory
+ [02-12-2024 00:58:13] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\index.php - line: 49 - Message: require_once(controllers/cocinaController.php.php): Failed to open stream: No such file or directory
+ 

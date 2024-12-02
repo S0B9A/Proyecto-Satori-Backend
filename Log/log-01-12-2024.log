@@ -1,0 +1,3 @@
+[01-12-2024 21:40:54] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Unknown column 'Administrador' in 'field list'
+ [01-12-2024 21:41:43] [Usuario WTK] error: File: C:\xampp\htdocs\SatoriAsianCuisine\controllers\core\MySqlConnect.php - line: 109 - Message: Unknown column 'Administrador' in 'field list'
+ 

@@ -13,8 +13,8 @@ class RoutesController
     private function registerRoutes() {
         // Registrar rutas protegidas
         //---------------------  Metodo,path (en minuscula),controlador, accion, array de nombres de roles
-        $this->addProtectedRoute('GET', '/satoriasiancuisine/pedido/', 'pedido', 'index', ['Administrador']);
-        $this->addProtectedRoute('GET', '/satoriasiancuisine/pedido', 'pedido', 'index', ['Administrador']);
+       // $this->addProtectedRoute('GET', '/satoriasiancuisine/pedido/', 'pedido', 'index', ['Administrador']);
+       // $this->addProtectedRoute('GET', '/satoriasiancuisine/pedido', 'pedido', 'index', ['Administrador', ]);
     }
 
     public function routes() {

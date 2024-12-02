@@ -32,6 +32,7 @@ require_once "models/PedidoComboModel.php";
 require_once "models/PedidoModel.php";
 require_once "models/PreciosModel.php";
 require_once "models/CocinaModel.php";
+require_once "models/IngredienteModel.php";
 
 
 /***--- Agregar todos los controladores*/
@@ -46,6 +47,7 @@ require_once "controllers/UsuarioController.php";
 require_once "controllers/PedidoController.php";
 require_once "controllers/PreciosController.php";
 require_once "controllers/cocinaController.php";
+require_once "controllers/IngredienteController.php";
 
 
 //Enrutador
