@@ -31,4 +31,4 @@ Este proyecto forma parte de un sistema completo para la gestión de un negocio 
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/usuario/backend-comida.git
+https://github.com/S0B9A/Proyecto-Satori-Backend.git
